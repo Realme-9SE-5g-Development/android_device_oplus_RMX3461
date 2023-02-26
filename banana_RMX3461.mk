@@ -11,8 +11,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from RMX3461 device
 $(call inherit-product, device/oplus/RMX3461/device.mk)
 
-# Inherit some common LineageOS Stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common BananaDroid Stuff.
+$(call inherit-product, vendor/banana/config/common.mk)
 
 # Globals Tags
 TARGET_SUPPORTS_QUICK_TAP := true
@@ -21,7 +21,7 @@ TARGET_FACE_UNLOCK_SUPPORTED := true
 #Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1080
 
-PRODUCT_NAME := lineage_RMX3461
+PRODUCT_NAME := banana_RMX3461
 PRODUCT_DEVICE := RMX3461
 PRODUCT_MANUFACTURER := realme
 PRODUCT_BRAND := realme
@@ -37,3 +37,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=$(PRODUCT_SYSTEM_NAME)
 
 BUILD_FINGERPRINT := realme/RMX3461/RE54BFL1:12/RKQ1.210503.001/R.202210211219:user/release-keys
+
+# BanananDroid
+BANANA_MAINTAINER := CYKEEK&Zirgom

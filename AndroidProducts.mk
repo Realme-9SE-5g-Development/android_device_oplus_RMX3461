@@ -1,7 +1,7 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_RMX3461.mk
+    $(LOCAL_DIR)/banana_RMX3461.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_RMX3461-user \
-    lineage_RMX3461-userdebug \
-    lineage_RMX3461-eng
+    banana_RMX3461-user \
+    banana_RMX3461-userdebug \
+    banana_RMX3461-eng
