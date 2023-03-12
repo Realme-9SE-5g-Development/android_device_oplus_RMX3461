@@ -11,8 +11,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from RMX3461 device
 $(call inherit-product, device/oplus/RMX3461/device.mk)
 
-# Inherit some common Elixir Stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Droidx Stuff.
+$(call inherit-product, vendor/droidx/config/common.mk)
 
 IS_PHONE := true
 TARGET_SUPPORTS_QUICK_TAP := true
@@ -22,15 +22,13 @@ TARGET_INCLUDE_STOCK_ACORE := false
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
-# RiceDroid props
-RICE_MAINTAINER := Dhruv00
-WITH_GMS := true
-TARGET_OPTOUT_GOOGLE_TELEPHONY := true
+# Droidx Official
+DROIDX_BUILDTYPE := OFFICIAL
 
 #Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1080
 
-PRODUCT_NAME := aosp_RMX3461
+PRODUCT_NAME := droidx_RMX3461
 PRODUCT_DEVICE := RMX3461
 PRODUCT_MANUFACTURER := realme
 PRODUCT_BRAND := realme
