@@ -12,9 +12,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/oplus/RMX3461/device.mk)
 
 # Inherit some common Elixir Stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Official-ify
 IS_PHONE := true
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_SUPPORTS_CALL_RECORDING := true
@@ -22,6 +21,11 @@ TARGET_SUPPORTS_GOOGLE_RECORDER := false
 TARGET_INCLUDE_STOCK_ACORE := false
 TARGET_INCLUDE_LIVE_WALLPAPERS := false
 TARGET_FACE_UNLOCK_SUPPORTED := true
+
+# RiceDroid props
+RICE_MAINTAINER := Dhruv00
+WITH_GMS := true
+TARGET_OPTOUT_GOOGLE_TELEPHONY := true
 
 #Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1080
