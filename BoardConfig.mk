@@ -6,6 +6,9 @@
 
 DEVICE_PATH := device/oplus/RMX3461
 
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth/include
+
 # Include the common OEM chipset BoardConfig.
 include device/oplus/sm8350-common/BoardConfigCommon.mk
 
