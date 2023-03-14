@@ -36,6 +36,19 @@ PRODUCT_PACKAGES += \
     sdcard_fstab.default \
     sdcard_fstab.default.vendor_ramdisk
 
+# GPS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss.measurement_corrections@1.1.vendor \
+    android.hardware.gnss.visibility_control@1.0.vendor \
+    android.hardware.gnss@2.1.vendor
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps.conf:$(TARGET_COPY_OUT_ODM)/etc/gps.conf
+    
+# Hotword enrollment
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
+    
 # NFC
 TARGET_NFC_CHIPSET := none
 
@@ -49,6 +62,15 @@ PRODUCT_PACKAGES += \
     OPlusSettingsProviderResTarget \
     OPlusSystemUIResTarget
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@2.0-service.multihal \
+    libsensorndkbridge \
+    sensors.oplus
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+    
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
