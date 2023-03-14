@@ -32,6 +32,40 @@ PRODUCT_PACKAGES += \
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# APEX
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
+# Audio
+PRODUCT_PACKAGES += \
+    android.hardware.audio@6.0-impl \
+    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio.service \
+    android.hardware.bluetooth.audio@2.1-impl \
+    android.hardware.soundtrigger@2.3-impl \
+    audio.bluetooth.default \
+    audio.primary.default \
+    audio.primary.lahaina \
+    audio.r_submix.default \
+    audio.usb.default \
+    audioadsprpcd \
+    liba2dpoffload \
+    libbatterylistener \
+    libcomprcapture \
+    libexthwplugin \
+    libhdmiedid \
+    libhfp \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libsndmonitor \
+    libspkrprot \
+    libssrec \
+    libstdc++.vendor \
+    libvolumelistener \
+    sound_trigger.primary.lahaina:32
+
+AUDIO_HAL_DIR := hardware/qcom-caf/sm8350/audio
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info_yupikidp.xml:$(TARGET_COPY_OUT_ODM)/etc/audio_platform_info.xml \
