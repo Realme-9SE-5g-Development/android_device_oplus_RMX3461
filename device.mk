@@ -84,6 +84,10 @@ PRODUCT_PACKAGES += \
     OPlusSystemUIResCommon \
     WifiResTarget 
 
+# Remove unwanted google packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+    
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.0-service.multihal \
