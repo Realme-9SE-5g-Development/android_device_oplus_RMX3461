@@ -6,6 +6,7 @@ ro.launcher.blur.appLaunch=0
 
 # Display 
 vendor.display.use_smooth_motion=1
+ro.config.avoid_gfx_accel=true
 
 # Graphics
 ro.surface_flinger.set_idle_timer_ms=4000
