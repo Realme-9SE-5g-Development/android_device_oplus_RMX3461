@@ -11,6 +11,7 @@ include device/oplus/sm8350-common/BoardConfigCommon.mk
 
 # Display
 TARGET_SCREEN_DENSITY := 450
+TARGET_DISPLAY_USE_SMOOTH_MOTION := true
 
 # Properties
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
