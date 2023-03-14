@@ -57,8 +57,11 @@ BOARD_USES_ALSA_AUDIO := true
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth/include
 
-# Include the common OEM chipset BoardConfig.
-include device/oplus/sm8350-common/BoardConfigCommon.mk
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := lahaina
+
+# Fingerprint
+TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/oplus:libudfps_extension.oplus
 
 # Display
 TARGET_SCREEN_DENSITY := 450
@@ -77,6 +80,37 @@ DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_oplus
+
+# Kernel
+BOARD_BOOT_HEADER_VERSION := 4
+BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_CMDLINE := \
+    androidboot.hardware=qcom \
+    androidboot.memcg=1 \
+    androidboot.usbcontroller=a600000.dwc3 \
+    cgroup.memory=nokmem,nosocket \
+    loop.max_part=7 \
+    lpm_levels.sleep_disabled=1 \
+    msm_rtb.filter=0x237 \
+    pcie_ports=compat \
+    service_locator.enable=1 \
+    swiotlb=0 \
+    ip6table_raw.raw_before_defrag=1 \
+    iptable_raw.raw_before_defrag=1
+BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_KERNEL_PAGESIZE := 4096
+
+ifndef BOARD_PREBUILT_DTBOIMAGE
+BOARD_KERNEL_SEPARATED_DTBO := true
+endif
+BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
+BOARD_RAMDISK_USE_LZ4 := true
+TARGET_KERNEL_SOURCE ?= kernel/oplus/sm8350
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-r416183b
+TARGET_KERNEL_CONFIG := vendor/$(TARGET_BOOTLOADER_BOARD_NAME)-qgki_defconfig
+ifdef TARGET_PREBUILT_KERNEL
+TARGET_FORCE_PREBUILT_KERNEL := true
+endif
 
 # Kernel modules
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(COMMON_PATH)/modules.blocklist
