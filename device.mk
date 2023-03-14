@@ -59,3 +59,6 @@ $(call inherit-product, device/oplus/sm8350-common/common.mk)
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oplus/RMX3461/RMX3461-vendor.mk)
+
+# Speed profile services and wifi-service to reduce RAM and storage
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
