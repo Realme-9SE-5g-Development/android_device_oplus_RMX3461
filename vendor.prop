@@ -1,6 +1,9 @@
 # Bluetooth
 bluetooth.device.default_name=realme Q3S
 
+# Blur
+ro.launcher.blur.appLaunch=0
+
 # Display 
 vendor.display.use_smooth_motion=1
 
