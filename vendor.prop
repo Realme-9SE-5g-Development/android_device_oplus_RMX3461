@@ -8,6 +8,8 @@ ro.launcher.blur.appLaunch=0
 vendor.display.use_smooth_motion=1
 ro.config.avoid_gfx_accel=true
 debug.renderengine.backend=threaded
+debug.sf.disable_backpressure=0
+debug.cpurend.vsync=true
 
 # Graphics
 ro.surface_flinger.set_idle_timer_ms=4000
