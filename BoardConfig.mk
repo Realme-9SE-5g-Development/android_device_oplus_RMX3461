@@ -160,13 +160,32 @@ TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
 TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/system_ext.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
+# Recovery
+ifndef TARGET_PREBUILT_DTB
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+else
+BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
+endif
+BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
+BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
+TARGET_RECOVERY_FSTAB ?= $(COMMON_PATH)/init/fstab.default
+TARGET_RECOVERY_FSTAB += $(DEVICE_PATH)/init/recovery.fstab
+TARGET_RECOVERY_UI_MARGIN_HEIGHT := 103
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+
 # RIL
 CUSTOM_APNS_FILE := $(COMMON_PATH)/configs/apns-conf.xml
 ENABLE_VENDOR_RIL_SERVICE := true
 
-# Recovery
-TARGET_RECOVERY_FSTAB += $(DEVICE_PATH)/init/recovery.fstab
-TARGET_RECOVERY_UI_MARGIN_HEIGHT := 103
+# Security
+BOOT_SECURITY_PATCH := 2022-08-05
+VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
+
+# SEPolicy
+include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
+include hardware/oplus/sepolicy/qti/SEPolicy.mk
 
 # Include the proprietary files BoardConfig.
 include vendor/oplus/RMX3461/BoardConfigVendor.mk
