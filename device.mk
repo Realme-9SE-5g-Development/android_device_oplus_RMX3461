@@ -338,7 +338,7 @@ $(call inherit-product, hardware/oplus/overlay/qssi/qssi.mk)
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-banana
+    $(LOCAL_PATH)/overlay-voltage
 
 PRODUCT_PACKAGES += \
     OPlusFrameworksResTarget \
@@ -515,8 +515,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
     
-# Inherit from the common OEM chipset makefile.
-$(call inherit-product, device/oplus/sm8350-common/common.mk)
-
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oplus/RMX3461/RMX3461-vendor.mk)
