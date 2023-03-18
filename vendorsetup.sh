@@ -33,3 +33,7 @@ git clone https://github.com/VoltageOS/vendor_codeaurora_telephony vendor/codeau
 
 # Clone Gcam GO
 git clone https://github.com/ArrowOS-Devices/android_packages_apps_GCamGOPrebuilt packages/apps/GCamGOPrebuilt
+
+# Clone Bluetooth Packages
+rm -rf packages/modules/Bluetooth
+git clone https://github.com/Cykeek-Labs/packages_modules_Bluetooth packages/modules/Bluetooth
