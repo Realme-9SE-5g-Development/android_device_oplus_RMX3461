@@ -176,6 +176,11 @@ odm/etc/lvimfs_params/LVIMFS_Parameter_ID8_MIC_Unprocess.txt
 odm/etc/lvimfs_params/LVIMFS_Parameter_ID9_MIC_Voice.txt
 
 # Bluetooth
+system_ext/etc/bluetooth/bt_configstore.conf
+system_ext/etc/bluetooth/bt_profile.conf
+system_ext/etc/bluetooth/bt_stack_debug.conf
+system_ext/etc/bluetooth/interop_database.conf
+system_ext/etc/bluetooth/leaudio_configs.xml
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
@@ -205,9 +210,9 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 
-# Bluetooth (aptX) - from raven - TP1A.220624.021
-system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
-system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
+# Bluetooth-AptX
+system_ext/bin/aptxalsOverlayCreateProject.sh
+system_ext/etc/permissions/privapp-permissions-aptxals.xml
 
 # Camera
 
@@ -935,73 +940,115 @@ vendor/lib64/libmdsprpc.so
 vendor/lib64/libsdsprpc.so
 
 # Charger
-vendor/bin/init.qti.chg_policy.sh
-vendor/etc/init/vendor.qti.hardware.charger_monitor@1.0-service.rc
-vendor/etc/charger_fstab.qti
-vendor/etc/charger_fw_fstab.qti
+vendor/bin/hvdcp_opti
 
 # CNE
--vendor/app/CneApp/CneApp.apk
-vendor/bin/cnd
-vendor/bin/mutualex
-vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
-vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml
-vendor/etc/cne/wqeclient/ATT/ATT_profile3.xml
-vendor/etc/cne/wqeclient/ATT/ATT_profile4.xml
-vendor/etc/cne/wqeclient/ATT/ATT_profile5.xml
-vendor/etc/cne/wqeclient/ATT/ATT_profile6.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile1.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile15.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile16.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile17.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile18.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile19.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile2.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile20.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile21.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile3.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile32.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile4.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile5.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile6.xml
-vendor/etc/cne/wqeclient/ROW/ROW_profile7.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile1.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile2.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml
-vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
-vendor/etc/cne/mwqem.conf
-vendor/etc/cne/profileMwqem.xml
-vendor/etc/default-permissions/com.qualcomm.qti.cne.xml
-vendor/etc/init/cnd.rc
-vendor/etc/init/mutualex.rc
-vendor/lib64/libcne.so
-vendor/lib64/libcneapiclient.so
-vendor/lib64/libcneoplookup.so
-vendor/lib64/libcneqmiutils.so
-vendor/lib64/libwms.so
-vendor/lib64/libwqe.so
-vendor/lib64/libxml.so
-vendor/lib64/vendor.qti.data.factory@2.0.so
-vendor/lib64/vendor.qti.data.factory@2.1.so
-vendor/lib64/vendor.qti.data.factory@2.2.so
-vendor/lib64/vendor.qti.data.factory@2.3.so
-vendor/lib64/vendor.qti.data.slm@1.0.so
-vendor/lib64/vendor.qti.hardware.cacert@1.0.so
-vendor/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so
-vendor/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so
-vendor/lib64/vendor.qti.hardware.data.cne.internal.server@1.0.so
-vendor/lib64/vendor.qti.hardware.data.connection@1.0.so
-vendor/lib64/vendor.qti.hardware.data.connection@1.1.so
-vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
-vendor/lib64/vendor.qti.hardware.data.iwlan@1.0.so
-vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
-vendor/lib64/vendor.qti.hardware.data.lce@1.0.so
-vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
-vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so
-vendor/lib64/vendor.qti.latency@2.0.so
-vendor/lib64/vendor.qti.latency@2.1.so
+product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml
+product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml
+-system_ext/framework/com.quicinc.cne.api-V1.0-java.jar
+-system_ext/framework/com.quicinc.cne.api-V1.1-java.jar
+-system_ext/framework/com.quicinc.cne.constants-V1.0-java.jar
+-system_ext/framework/com.quicinc.cne.constants-V2.0-java.jar
+-system_ext/framework/com.quicinc.cne.constants-V2.1-java.jar
+-system_ext/framework/vendor.qti.data.factory-V1.0-java.jar
+-system_ext/framework/vendor.qti.data.factory-V2.0-java.jar
+-system_ext/framework/vendor.qti.data.factory-V2.1-java.jar
+-system_ext/framework/vendor.qti.data.factory-V2.2-java.jar
+-system_ext/framework/vendor.qti.data.factory-V2.3-java.jar
+-system_ext/framework/vendor.qti.data.factory-V2.4-java.jar
+-system_ext/framework/vendor.qti.data.factory-V2.5-java.jar
+-system_ext/framework/vendor.qti.data.factory-V2.6-java.jar
+-system_ext/framework/vendor.qti.data.factory-V2.7-java.jar
+-system_ext/framework/vendor.qti.data.mwqem-V1.0-java.jar
+-system_ext/framework/vendor.qti.data.slm-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.cne.internal.api-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.cne.internal.constants-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.1-java.jar
+-system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.2-java.jar
+-system_ext/framework/vendor.qti.hardware.data.cne.internal.server-V1.3-java.jar
+-system_ext/framework/vendor.qti.hardware.data.connection-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.connection-V1.1-java.jar
+-system_ext/framework/vendor.qti.hardware.data.dynamicdds-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.dynamicdds-V1.1-java.jar
+-system_ext/framework/vendor.qti.hardware.data.flow-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.flow-V1.1-java.jar
+-system_ext/framework/vendor.qti.hardware.data.iwlan-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.iwlan-V1.1-java.jar
+-system_ext/framework/vendor.qti.hardware.data.lce-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.qmi-V1.0-java.jar
+system_ext/lib/com.quicinc.cne.api@1.0.so
+system_ext/lib/com.quicinc.cne.api@1.1.so
+system_ext/lib/com.quicinc.cne.constants@1.0.so
+system_ext/lib/com.quicinc.cne.constants@2.0.so
+system_ext/lib/com.quicinc.cne.constants@2.1.so
+system_ext/lib/com.quicinc.cne.server@1.0.so
+system_ext/lib/com.quicinc.cne.server@2.0.so
+system_ext/lib/com.quicinc.cne.server@2.1.so
+system_ext/lib/com.quicinc.cne.server@2.2.so
+system_ext/lib/vendor.qti.data.factory@1.0.so
+system_ext/lib/vendor.qti.data.factory@2.0.so
+system_ext/lib/vendor.qti.data.factory@2.1.so
+system_ext/lib/vendor.qti.data.factory@2.2.so
+system_ext/lib/vendor.qti.data.factory@2.3.so
+system_ext/lib/vendor.qti.data.factory@2.4.so
+system_ext/lib/vendor.qti.data.factory@2.5.so
+system_ext/lib/vendor.qti.data.factory@2.6.so
+system_ext/lib/vendor.qti.data.factory@2.7.so
+system_ext/lib/vendor.qti.data.mwqem@1.0.so
+system_ext/lib/vendor.qti.data.slm@1.0.so
+system_ext/lib/vendor.qti.hardware.data.cne.internal.api@1.0.so
+system_ext/lib/vendor.qti.hardware.data.cne.internal.constants@1.0.so
+system_ext/lib/vendor.qti.hardware.data.cne.internal.server@1.0.so
+system_ext/lib/vendor.qti.hardware.data.cne.internal.server@1.1.so
+system_ext/lib/vendor.qti.hardware.data.cne.internal.server@1.2.so
+system_ext/lib/vendor.qti.hardware.data.cne.internal.server@1.3.so
+system_ext/lib/vendor.qti.hardware.data.connection@1.0.so
+system_ext/lib/vendor.qti.hardware.data.connection@1.1.so
+system_ext/lib/vendor.qti.hardware.data.dynamicdds@1.0.so
+system_ext/lib/vendor.qti.hardware.data.dynamicdds@1.1.so
+system_ext/lib/vendor.qti.hardware.data.flow@1.0.so
+system_ext/lib/vendor.qti.hardware.data.flow@1.1.so
+system_ext/lib/vendor.qti.hardware.data.iwlan@1.0.so
+system_ext/lib/vendor.qti.hardware.data.iwlan@1.1.so
+system_ext/lib/vendor.qti.hardware.data.lce@1.0.so
+system_ext/lib/vendor.qti.hardware.data.qmi@1.0.so
+system_ext/lib64/com.quicinc.cne.api@1.0.so
+system_ext/lib64/com.quicinc.cne.api@1.1.so
+system_ext/lib64/com.quicinc.cne.constants@1.0.so
+system_ext/lib64/com.quicinc.cne.constants@2.0.so
+system_ext/lib64/com.quicinc.cne.constants@2.1.so
+system_ext/lib64/com.quicinc.cne.server@1.0.so
+system_ext/lib64/com.quicinc.cne.server@2.0.so
+system_ext/lib64/com.quicinc.cne.server@2.1.so
+system_ext/lib64/com.quicinc.cne.server@2.2.so
+system_ext/lib64/vendor.qti.data.factory@1.0.so
+system_ext/lib64/vendor.qti.data.factory@2.0.so
+system_ext/lib64/vendor.qti.data.factory@2.1.so
+system_ext/lib64/vendor.qti.data.factory@2.2.so
+system_ext/lib64/vendor.qti.data.factory@2.3.so
+system_ext/lib64/vendor.qti.data.factory@2.4.so
+system_ext/lib64/vendor.qti.data.factory@2.5.so
+system_ext/lib64/vendor.qti.data.factory@2.6.so
+system_ext/lib64/vendor.qti.data.factory@2.7.so
+system_ext/lib64/vendor.qti.data.mwqem@1.0.so
+system_ext/lib64/vendor.qti.data.slm@1.0.so
+system_ext/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so
+system_ext/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so
+system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.0.so
+system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.1.so
+system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.2.so
+system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.3.so
+system_ext/lib64/vendor.qti.hardware.data.connection@1.0.so
+system_ext/lib64/vendor.qti.hardware.data.connection@1.1.so
+system_ext/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
+system_ext/lib64/vendor.qti.hardware.data.dynamicdds@1.1.so
+system_ext/lib64/vendor.qti.hardware.data.flow@1.0.so
+system_ext/lib64/vendor.qti.hardware.data.flow@1.1.so
+system_ext/lib64/vendor.qti.hardware.data.iwlan@1.0.so
+system_ext/lib64/vendor.qti.hardware.data.iwlan@1.1.so
+system_ext/lib64/vendor.qti.hardware.data.lce@1.0.so
+system_ext/lib64/vendor.qti.hardware.data.qmi@1.0.so
 
 # Configstore
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
@@ -1096,16 +1143,73 @@ vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libsdmextension.so
 vendor/lib64/libtinyxml2_1.so
 
-# Display calibration data
-vendor/etc/ltm_config_samsung_amb655x_fhd_cmd_mode_dsc_dsi_panel.xml
-vendor/etc/ltm_config_samsung_amb670yf01_dsc_cmd_mode_panel.xml
+# Display-calibration
+vendor/etc/qdcm_calib_data_19795_samsung_AMS678UW01_dsc_cmd_mode_panel.xml
+vendor/etc/qdcm_calib_data_20085_boe_nt37701_amoled_fhd+_panel.xml
+vendor/etc/qdcm_calib_data_20085_samsung_S6E3XA1_dsc_cmd_mode_panel.xml
+vendor/etc/qdcm_calib_data_21031_samsung_AMS643YE05_dsc_cmd_mode_panel.xml
+vendor/etc/qdcm_calib_data_21075_ds_ili7807s_fhd_tft_lcd_panel_with_dsc.xml
+vendor/etc/qdcm_calib_data_21643_ds_ili7807s_fhd_tft_lcd_panel_with_dsc.xml
+vendor/etc/qdcm_calib_data_boe_nt37701_dsc_cmd_mode_panel.xml
+vendor/etc/qdcm_calib_data_boe_nt37705_dsc_cmd_mode_panel.xml
+vendor/etc/qdcm_calib_data_boe_nt37800_amoled_fhd+_panel_with_DSC.xml
+vendor/etc/qdcm_calib_data_Dual_nt35597_cmd_mode_dsi_truly_panel_without_DSC.xml
+vendor/etc/qdcm_calib_data_Dual_nt35597_video_mode_dsi_truly_panel_without_DSC.xml
+vendor/etc/qdcm_calib_data_nt35597_cmd_mode_dsi_truly_panel_with_DSC.xml
+vendor/etc/qdcm_calib_data_nt35597_video_mode_dsi_truly_panel_with_DSC.xml
+vendor/etc/qdcm_calib_data_nt35695b_truly_fhd_command_mode_dsi_panel.xml
+vendor/etc/qdcm_calib_data_nt36672e_60_Hz_fhd_plus_video_mode_panel_without_DSC.xml
+vendor/etc/qdcm_calib_data_nt36672e_fhd_plus_120Hz_Video_panel.xml
+vendor/etc/qdcm_calib_data_nt36672e_fhd_plus_144Hz_video_panel.xml
+vendor/etc/qdcm_calib_data_r66451_amoled_cmd_mode_dsi_visionox_panel_with_DSC.xml
+vendor/etc/qdcm_calib_data_r66451_amoled_video_mode_dsi_visionox_panel_with_DSC.xml
+vendor/etc/qdcm_calib_data_rm69299_amoled_fhd+_cmd_mode_dsi_visionox_panel.xml
+vendor/etc/qdcm_calib_data_rm69299_amoled_fhd+_video_mode_dsi_visionox_panel.xml
+vendor/etc/qdcm_calib_data_samsung_amb655uv01_amoled_fhd+_panel_with_DSC.xml
+vendor/etc/qdcm_calib_data_samsung_amb655xl08_amoled_fhd+_panel.xml
 vendor/etc/qdcm_calib_data_samsung_amb655x_fhd_cmd_mode_dsc_dsi_panel.xml
 vendor/etc/qdcm_calib_data_samsung_amb670yf01_dsc_cmd_mode_panel.xml
+vendor/etc/qdcm_calib_data_samsung_amb670yf01_dsc_cmd_mode_panel_ADFR_MAGIC-3232.xml
+vendor/etc/qdcm_calib_data_samsung_AMS643YE01_dsc_cmd_mode_panel.xml
+vendor/etc/qdcm_calib_data_samsung_ams662zs01_dvt_dsc_cmd_mode_panel.xml
+vendor/etc/qdcm_calib_data_samsung_ams662zs01_fhd_cmd_mode_dsc_dsi_panel.xml
+vendor/etc/qdcm_calib_data_samsung_AMS678UW01_dsc_cmd_mode_panel.xml
+vendor/etc/qdcm_calib_data_samsung_S6E3HC3_dsc_cmd_mode_panel.xml
+vendor/etc/qdcm_calib_data_sharp_1080p_cmd_mode_dsi_panel.xml
+vendor/etc/qdcm_calib_data_Sharp_2k_cmd_mode_qsync_dsi_panel.xml
+vendor/etc/qdcm_calib_data_Sharp_2k_video_mode_qsync_dsi_panel.xml
+vendor/etc/qdcm_calib_data_Sharp_4k_cmd_mode_dsc_dsi_panel.xml
+vendor/etc/qdcm_calib_data_Sharp_4k_video_mode_dsc_dsi_panel.xml
+vendor/etc/qdcm_calib_data_Sharp_fhd_cmd_mode_qsync_dsi_panel.xml
+vendor/etc/qdcm_calib_data_Sharp_fhd_video_mode_qsync_dsi_panel.xml
+vendor/etc/qdcm_calib_data_Sharp_qhd_cmd_mode_dsi_panel.xml
+vendor/etc/qdcm_calib_data_sw43404_amoled_boe_fhd+_panel_with_DSC.xml
+vendor/etc/qdcm_calib_data_sw43404_amoled_cmd_mode_dsi_boe_panel_with_DSC.xml
+vendor/etc/qdcm_calib_data_sw43404_amoled_video_mode_dsi_boe_panel_with_DSC.xml
+vendor/etc/qdcm_calib_data_tianma_ili7838a_dsc_cmd_mode_panel.xml
 
 # Display postprocessing
+system_ext/lib/vendor.display.color@1.0.so
+system_ext/lib/vendor.display.color@1.1.so
+system_ext/lib/vendor.display.color@1.2.so
+system_ext/lib/vendor.display.color@1.3.so
+system_ext/lib/vendor.display.postproc@1.0.so
+system_ext/lib64/vendor.display.color@1.0.so
+system_ext/lib64/vendor.display.color@1.1.so
+system_ext/lib64/vendor.display.color@1.2.so
+system_ext/lib64/vendor.display.color@1.3.so
+system_ext/lib64/vendor.display.postproc@1.0.so
 vendor/bin/hw/vendor.display.color@1.0-service
 vendor/bin/ppd
 vendor/etc/init/vendor.display.color@1.0-service.rc
+vendor/lib/libdisp-aba.so
+vendor/lib/vendor.display.color@1.0.so
+vendor/lib/vendor.display.color@1.1.so
+vendor/lib/vendor.display.color@1.2.so
+vendor/lib/vendor.display.color@1.3.so
+vendor/lib/vendor.display.color@1.4.so
+vendor/lib/vendor.display.color@1.5.so
+vendor/lib/vendor.display.postproc@1.0.so
 vendor/lib64/libdisp-aba.so
 vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/vendor.display.color@1.1.so
@@ -1165,6 +1269,12 @@ vendor/lib/hw/vendor.qti.esepowermanager@1.1-impl.so
 vendor/lib64/vendor.qti.esepowermanager@1.0.so
 vendor/lib64/vendor.qti.esepowermanager@1.1.so
 
+# Factory
+vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
+vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc
+vendor/lib64/vendor.qti.hardware.factory@1.0.so
+vendor/lib64/vendor.qti.hardware.factory@1.1.so
+
 # Fingerprint
 odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprint@2.1-service
 odm/bin/init.oplus.fingerprints.sh
@@ -1179,7 +1289,9 @@ odm/lib64/vendor.oplus.hardware.commondcs@1.0.so
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
+vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
+
 
 # Graphics (Adreno)
 vendor/gpu/kbc/sequence_manifest.bin
@@ -1310,6 +1422,14 @@ vendor/lib64/vendor.qti.gnss@3.0.so
 vendor/lib64/vendor.qti.gnss@4.0-service.so
 vendor/lib64/vendor.qti.gnss@4.0.so
 
+# Health
+-boot/ramdisk/sbin/vendor/etc/vintf/manifest/android.hardware.health@2.1.xml
+vendor/bin/hw/android.hardware.health@2.1-service
+vendor/etc/init/android.hardware.health@2.1-service.rc
+-vendor/etc/vintf/manifest/android.hardware.health@2.1.xml
+vendor/lib/hw/android.hardware.health@2.0-impl-2.1-qti.so
+vendor/lib64/hw/android.hardware.health@2.0-impl-2.1-qti.so
+
 # Hotword Enrollment
 my_product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml:product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml
 -my_product/framework/com.android.hotwordenrollment.common.util.jar:product/framework/com.android.hotwordenrollment.common.util.jar
@@ -1392,7 +1512,6 @@ vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
 
 # Iris
-
 odm/lib/libpwirisfeature.so
 odm/lib/libpwirishalwrapper.so
 odm/lib64/vendor.pixelworks.hardware.display@1.0.so
@@ -1420,6 +1539,14 @@ vendor/lib64/libkeymasterdeviceutils.so
 vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqtikeymaster4.so
+
+# Lights
+-boot/ramdisk/sbin/vendor/etc/vintf/manifest/android.hardware.lights-qti.xml
+vendor/bin/hw/android.hardware.lights-service.qti
+vendor/etc/init/android.hardware.lights-qti.rc
+-vendor/etc/vintf/manifest/android.hardware.lights-qti.xml
+vendor/lib/hw/lights.qcom.so
+vendor/lib64/hw/lights.qcom.so
 
 # Listen
 vendor/lib/libcapiv2svacnn.so
@@ -1534,6 +1661,21 @@ vendor/lib64/libspcom.so
 # Perf
 odm/lib/vendor.oplus.hardware.performance@1.0.so
 odm/lib64/vendor.oplus.hardware.performance@1.0.so
+system_ext/etc/perf/wlc_model.tflite
+system_ext/lib/libqti-perfd-client_system.so
+system_ext/lib/libqti_performance.so
+system_ext/lib/vendor.qti.hardware.perf@2.0.so
+system_ext/lib/vendor.qti.hardware.perf@2.1.so
+system_ext/lib/vendor.qti.hardware.perf@2.2.so
+system_ext/lib/vendor.qti.hardware.perf@2.3.so
+system_ext/lib64/libqti-perfd-client_system.so
+system_ext/lib64/libqti_performance.so
+system_ext/lib64/vendor.qti.hardware.perf@2.0.so
+system_ext/lib64/vendor.qti.hardware.perf@2.1.so
+system_ext/lib64/vendor.qti.hardware.perf@2.2.so
+system_ext/lib64/vendor.qti.hardware.perf@2.3.so
+vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
+vendor/bin/msm_irqbalance
 vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
 vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc
 vendor/etc/perf/commonresourceconfigs.xml
@@ -1550,6 +1692,13 @@ vendor/lib/libqti-perfd-client.so
 vendor/lib/libqti-perfd.so
 vendor/lib/libqti-util.so
 vendor/lib/libqti-utils.so
+vendor/lib/vendor.qti.hardware.perf@2.0.so
+vendor/lib/vendor.qti.hardware.perf@2.1.so
+vendor/lib/vendor.qti.hardware.perf@2.2.so
+vendor/lib64/libmeters-ns.so
+vendor/lib64/libperfconfig.so
+vendor/lib64/libperfgluelayer.so
+vendor/lib64/libqti-perfd-client.so
 vendor/lib64/liblearningmodule.so
 vendor/lib64/libmeters.so
 vendor/lib64/libperfconfig.so
@@ -1560,8 +1709,23 @@ vendor/lib64/libqti-perfd.so
 vendor/lib64/libqti-util.so
 vendor/lib64/libqti-utils.so
 vendor/lib64/libskewknob.so
+vendor/lib64/vendor.qti.hardware.perf@2.0.so
+vendor/lib64/vendor.qti.hardware.perf@2.1.so
+vendor/lib64/vendor.qti.hardware.perf@2.2.so
 
-# Perf LM
+# Perf-IOP
+system_ext/lib/vendor.qti.hardware.iop@2.0.so
+system_ext/lib64/vendor.qti.hardware.iop@2.0.so
+vendor/lib/libqti-iopd-client.so
+vendor/lib/libqti-iopd.so
+vendor/lib/vendor.qti.hardware.iop@1.0.so
+vendor/lib/vendor.qti.hardware.iop@2.0.so
+vendor/lib64/libqti-iopd-client.so
+vendor/lib64/libqti-iopd.so
+vendor/lib64/vendor.qti.hardware.iop@1.0.so
+vendor/lib64/vendor.qti.hardware.iop@2.0.so
+
+# Perf-LM
 vendor/etc/lm/prekill/prekill_2GB.data
 vendor/etc/lm/prekill/prekill_4GB.data
 vendor/etc/lm/prekill/prekill_6GB.data
@@ -1772,7 +1936,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 system/system/lib64/android.hardware.secure_element@1.0.so
 
 # Sensors
-
+-boot/ramdisk/sbin/vendor/etc/vintf/manifest/android.hardware.sensors@2.0-multihal.xml
 odm/etc/sensor/config/alsps.json
 odm/etc/sensor/config/kodiak_alsps.json
 odm/etc/sensor/config/kodiak_idp_icm4x6xa.json
@@ -1780,13 +1944,16 @@ odm/etc/sensor/config/kodiak_idp_icm4x6xx_0.json
 odm/etc/sensor/config/kodiak_idp_lsm6dso.json
 odm/etc/sensor/config/kodiak_idp_mmc56x3x_0.json
 system_ext/oplus/sys_sensor_config.xml
-
+-system_ext/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
 odm/bin/oplus_sensor_fb
 odm/lib64/liboplus_service.so
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service
 vendor/bin/init.qcom.sensors.sh
 vendor/bin/sensors.qti
 vendor/bin/sscrpcd
+vendor/bin/hw/android.hardware.sensors@2.0-service.multihal
+vendor/etc/init/android.hardware.sensors@2.0-service-multihal.rc
+-vendor/etc/vintf/manifest/android.hardware.sensors@2.0-multihal.xml
 vendor/etc/init/init.vendor.sensors.rc
 vendor/etc/init/vendor.qti.hardware.sensorscalibrate@1.0-service.rc
 vendor/etc/init/vendor.sensors.qti.rc
@@ -1865,6 +2032,15 @@ vendor/etc/sensors/config/sns_tilt_sw_enabled.json
 vendor/etc/sensors/config/sns_tilt_to_wake.json
 vendor/etc/sensors/config/sns_wrist_pedo.json
 vendor/etc/sensors/sns_reg_config
+vendor/lib/android.hardware.sensors@2.0-ScopedWakelock.so
+vendor/lib/libsensorcal.so
+vendor/lib/libsensorndkbridge.so
+vendor/lib/libsensorslog.so
+vendor/lib/libssc.so
+vendor/lib/libssc_default_listener.so
+vendor/lib/sensors.ssc.so
+vendor/lib64/android.hardware.sensors@2.0-ScopedWakelock.so
+vendor/lib64/libsensorndkbridge.so
 vendor/lib64/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so
 vendor/lib64/libsensorcal.so
 vendor/lib64/libsensorslog.so
@@ -1912,7 +2088,9 @@ vendor/etc/thermal-engine.conf
 -vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 vendor/etc/init/init.time_daemon.rc
+vendor/lib/libtime_genoff.so
 vendor/lib64/libtime_genoff.so
+
 
 # Touchscreen firmware
 odm/firmware/tp/21643/FW_NF_ILI7807S_DSJM.img
@@ -1933,6 +2111,33 @@ vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
+
+# Vibrator
+-boot/ramdisk/sbin/vendor/etc/vintf/manifest/vendor.qti.hardware.vibrator.service.xml
+odm/bin/hw/vendor.qti.hardware.vibrator.service
+odm/etc/init/vendor.qti.hardware.vibrator.service.rc
+-odm/etc/vintf/manifest/vendor.qti.hardware.vibrator.service.xml
+odm/lib/libaacvibrator.so
+odm/lib/libqtivibratoreffect.so
+odm/lib/vendor.aac.hardware.richtap.vibrator-V1-ndk_platform.so
+odm/lib/vendor.aac.hardware.richtap.vibrator-V2-ndk_platform.so
+odm/lib/vendor.qti.hardware.vibrator.impl.so
+odm/lib64/libaacvibrator.so
+odm/lib64/libqtivibratoreffect.so
+odm/lib64/vendor.aac.hardware.richtap.vibrator-V1-ndk_platform.so
+odm/lib64/vendor.aac.hardware.richtap.vibrator-V2-ndk_platform.so
+odm/lib64/vendor.qti.hardware.vibrator.impl.so
+odm/vendor.aac.hardware.richtap.vibrator-timestamp
+vendor/bin/hw/vendor.qti.hardware.vibrator.service
+vendor/etc/init/vendor.qti.hardware.vibrator.service.rc
+-vendor/etc/vintf/manifest/vendor.qti.hardware.vibrator.service.xml
+vendor/lib/hw/vibrator.default.so
+vendor/lib/modules/5.4-gki/leds-qpnp-vibrator-ldo.ko
+vendor/lib64/hw/vibrator.default.so
+vendor/lib64/libaacvibrator.so
+vendor/lib64/libqtivibratoreffect.so
+vendor/lib64/vendor.aac.hardware.richtap.vibrator-V1-ndk_platform.so
+vendor/lib64/vendor.qti.hardware.vibrator.impl.so
 
 # VPU firmware
 vendor/firmware/vpu20_4v.b01
@@ -1979,6 +2184,7 @@ vendor/lib64/vendor.qti.hardware.vpp@1.3.so
 vendor/lib64/vendor.qti.hardware.vpp@2.0.so
 
 # Widevine DRM
+-boot/ramdisk/sbin/vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.clearkey.xml
 odm/bin/hw/android.hardware.drm@1.3-service.widevine
 odm/etc/init/android.hardware.drm@1.3-service.widevine.rc
 -odm/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
@@ -1989,13 +2195,8 @@ vendor/etc/oplus_Widevine_licenses.pfm
 vendor/lib64/libtrustedapploader.so
 
 # WiFi
-odm/etc/wifi/regdb.bin
-odm/vendor/etc/wifi/WCNSS_qcom_cfg.ini
-vendor/bin/cnss-daemon
-vendor/etc/init/init.vendor.wlan.rc
-vendor/etc/wifi/p2p_supplicant_overlay.conf
-vendor/etc/wifi/wpa_supplicant_overlay.conf
-odm/etc/wifi/bdwlan.elf
+vendor/lib64/vendor.oplus.hardware.wifi.hostapd@1.0.so
+vendor/lib64/vendor.oplus.hardware.wifi.supplicant@2.0.so
 
 # WiFi Display (system)
 -system/framework/WfdCommon.jar
