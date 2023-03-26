@@ -11,13 +11,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from RMX3461 device
 $(call inherit-product, device/oplus/RMX3461/device.mk)
 
-# Inherit some common Elixir Stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common cherish Stuff.
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
 #Bootanimation
 TARGET_BOOT_ANIMATION_RES := 1080
 
-PRODUCT_NAME := lineage_RMX3461
+PRODUCT_NAME := cherish_RMX3461
 PRODUCT_DEVICE := RMX3461
 PRODUCT_MANUFACTURER := realme
 PRODUCT_BRAND := realme
@@ -34,14 +34,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 BUILD_FINGERPRINT := realme/RMX3461/RE54BFL1:12/RKQ1.210503.001/R.202210211219:user/release-keys
 
-# AlphaDroid
-WITH_GAPPS := true
-TARGET_CORE_GAPPS := true
-ALPHA_BUILD_TYPE := Official
-TARGET_ENABLE_BLUR := true
-TARGET_INCLUDE_MATLOG := false
-TARGET_USE_GRAPHENE_CAMERA := true
-TARGET_USE_PIXEL_LAUNCHER := false
-TARGET_EXCLUDES_AUDIOFX := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
-ALPHA_MAINTAINER := Dhruv00
+# Cherish
+CHERISH_BUILD_TYPE := OFFICIAL
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES
+ += \
+    ro.cherish.maintainer=Dhruv00
